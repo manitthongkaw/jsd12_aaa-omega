@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# env
+.env*
+*.local
+
+# logs
+*.log
+
+# macOS
+.DS_Store
+
+# specific file
+app-input.css
+package-lock.json
+package.json

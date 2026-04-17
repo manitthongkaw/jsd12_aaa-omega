@@ -11,21 +11,21 @@
     <link rel="stylesheet" href="./src/assets/css/app.css" />
     <style>
       @media (width < 48rem) {
-        aside:has(#nav-header .nav-mobile a:is(:hover,:focus)) {min-width:200px;}
-        nav:has(#nav-header .nav-mobile a:is(:hover,:focus)) {height:100%;}
-        #nav-header:has(.nav-mobile a:is(:hover,:focus)) ~ :is(#nav-main, #nav-footer) {display:flex;}
+        aside:has(#navHeader .nav-mobile a:is(:hover,:focus)) {min-width:200px;}
+        nav:has(#navHeader .nav-mobile a:is(:hover,:focus)) {height:100%;}
+        #navHeader:has(.nav-mobile a:is(:hover,:focus)) ~ :is(#navMain, #navFooter) {display:flex;}
       }
     </style>
   </head>
   <body class="dashboard flex min-h-screen">
-    <aside class="md:min-w-50 h-screen">
-      <nav class="fixed md:min-w-50 md:h-full flex flex-col rounded-r-2xl bg-neutral-lighter">
+    <aside class="hidden md:flex md:min-w-50 h-screen">
+      <nav class="md:min-w-50 md:h-full flex flex-col rounded-r-2xl bg-neutral-lighter">
         <ul id="navHeader" class="flex items-center gap-2 p-2 md:p-0">
           <li class="nav-logo"><a class="block text-xl text-neutral-dark hover:text-primary-hover px-3 py-2 md:px-5 md:py-4" href="./dashboard.html">LOGO</a></li>
           <li class="nav-mobile md:hidden"><a class="button button-icon button-ghost button-content hover:text-primary-hover" href="#nav-mobile"><span class="icon-material">menu</span></a></li>
         </ul>
         <ul id="navMain" class="hidden md:flex flex-col flex-1 gap-2 p-2 border-t border-neutral-disable">
-          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
+          <li><a class="button button-ghost justify-start w-full bg-white" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
           <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-product.html"><span class="icon-material">storefront</span> สินค้า</a></li>
           <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-order.html"><span class="icon-material">shopping_cart</span> คำสั่งซื้อ</a></li>
           <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-maintenance.html"><span class="icon-material">build</span> บริการซ่อมบำรุง</a></li>
@@ -37,172 +37,229 @@
         </ul>
       </nav>
     </aside>
-    <main class="flex grow flex-col gap-10 px-10 py-20">
-      <section id="statistic">
-        <div class="card-statistic">
-          <span>ยอดขาย/เดือน</span>
+    <main class="flex grow flex-col min-w-0 gap-10 px-5 md:px-10 py-20">
+      <section id="stat">
+        <h2 class="w-full">สถิติภาพรวม</h2>
+        <div class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+          <h3>ยอดขาย/เดือน</h3>
           <strong>1,543,500</strong>
-          <small class="badge badge-soft badge-success">+18%</small>
+          <em class="badge badge-soft badge-success">+18%</em>
         </div>
-        <div class="card-statistic">
-          <span>ยอดขายรายชิ้น</span>
+        <div class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+          <h3>ยอดขายรายชิ้น</h3>
           <strong>13,500</strong>
-          <small>3 ออเดอร์</small>
+          <em>3 ออเดอร์</em>
         </div>
-        <div class="card-statistic">
-          <span>ยอดขายยกชุด</span>
+        <div class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+          <h3>ยอดขายยกชุด</h3>
           <strong>1,530,000</strong>
-          <small>7 ออเดอร์</small>
+          <em>7 ออเดอร์</em>
         </div>
-        <div class="card-statistic">
-          <span>กำไรโดยประมาณ</span>
+        <div class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+          <h3>กำไรโดยประมาณ</h3>
           <strong>463,050</strong>
-          <small class="badge badge-soft badge-success">30%</small>
+          <em class="badge badge-soft badge-success">30%</em>
         </div>
-        <div class="card-statistic">
-          <span>งานรอดำเนินการ</span>
+        <div class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+          <h3>งานรอดำเนินการ</h3>
           <strong>18</strong>
-          <small class="badge badge-soft badge-warning">36%</small>
+          <em class="badge badge-soft badge-warning">36%</em>
         </div>
-        <div class="card-statistic">
-          <span>สินค้าใกล้หมด</span>
+        <div class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+          <h3>สินค้าใกล้หมด</h3>
           <strong class="text-warning-base">12</strong>
-          <small>รายการ</small>
+          <em>รายการ</em>
         </div>
       </section>
-      <section id="order" class="flex flex-col gap-5">
-        <header class="flex justify-between items-center">
-          <h2>คำสั่งซื้อล่าสุด</h2>
-          <a class="button button-soft button-content" href="./dashboard-order.html">คำสั่งซื้อทั้งหมด</a>
-        </header>
-        <table>
-          <thead>
-            <tr>
-              <th>วันที่สั่งซื้อ</th>
-              <th>เลขที่คำสั่งซื้อ</th>
-              <th>ชื่อผู้สั่งซื้อ</th>
-              <th>ยอดรวมสุทธิ</th>
-              <th>สถานะ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>03/04/2026</td>
-              <td>AAA20260027</td>
-              <td>คุณสมชาย ใจดี</td>
-              <td>28,000</td>
-              <td>
-                <select>
-                  <option>รอชำระเงิน</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>01/04/2026</td>
-              <td>AAA20260026</td>
-              <td>บริษัท ไทยกรีนเทค จำกัด</td>
-              <td>298,000</td>
-              <td>
-                <select>
-                  <option>รอชำระเงิน</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>30/03/2026</td>
-              <td>AAA20260025</td>
-              <td>คุณณัฐวุฒิ ตั้งเจริญ</td>
-              <td>8,300</td>
-              <td>
-                <select>
-                  <option>ชำระเงินแล้ว</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>27/03/2026</td>
-              <td>AAA20260024</td>
-              <td>คุณกนกวรรณ บุญมี</td>
-              <td>2,400</td>
-              <td>
-                <select>
-                  <option>กำลังเตรียมสินค้า</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>27/03/2026</td>
-              <td>AAA20260023</td>
-              <td>บริษัท พรีเมียร์ เอ็นเนอร์ยี่ จำกัด</td>
-              <td>170,000</td>
-              <td>
-                <select>
-                  <option>ชำระเงินแล้ว</option>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <section id="order" class="flex flex-row flex-wrap justify-between items-center gap-5">
+        <h2>คำสั่งซื้อล่าสุด</h2>
+        <div class="table-container xs:order-3">
+          <table>
+            <colgroup>
+              <col class="w-px">
+              <col class="w-px">
+              <col class="w-auto">
+              <col class="w-px">
+              <col class="w-px">
+            </colgroup> 
+            <thead>
+              <tr>
+                <th scope="col">วันที่สั่งซื้อ</th>
+                <th scope="col">เลขที่คำสั่งซื้อ</th>
+                <th scope="col">ชื่อผู้สั่งซื้อ</th>
+                <th scope="col">ยอดรวมสุทธิ</th>
+                <th scope="col">สถานะ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>03/04/2026</td>
+                <td>AAA20260027</td>
+                <td>คุณสมชาย ใจดี</td>
+                <td>28,000</td>
+                <td>
+                  <select id="status" class="button button-soft button-content" name="status">
+                    <option value="" selected>รอชำระเงิน</option>
+                    <option value="">ชำระเงินแล้ว</option>
+                    <option value="">กำลังเตรียมสินค้า</option>
+                    <option value="">กำลังจัดส่ง</option>
+                    <option value="">จัดส่งสำเร็จ</option>
+                    <option value="">ยกเลิกคำสั่งซื้อ</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>01/04/2026</td>
+                <td>AAA20260026</td>
+                <td>บริษัท ไทยกรีนเทค จำกัด</td>
+                <td>298,000</td>
+                <td>
+                  <select id="status" class="button button-soft button-content" name="status">
+                    <option value="" selected>รอชำระเงิน</option>
+                    <option value="">ชำระเงินแล้ว</option>
+                    <option value="">กำลังเตรียมสินค้า</option>
+                    <option value="">กำลังจัดส่ง</option>
+                    <option value="">จัดส่งสำเร็จ</option>
+                    <option value="">ยกเลิกคำสั่งซื้อ</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>30/03/2026</td>
+                <td>AAA20260025</td>
+                <td>คุณณัฐวุฒิ ตั้งเจริญ</td>
+                <td>8,300</td>
+                <td>
+                  <select id="status" class="button button-outline button-success" name="status">
+                    <option value="">รอชำระเงิน</option>
+                    <option value="" selected>ชำระเงินแล้ว</option>
+                    <option value="">กำลังเตรียมสินค้า</option>
+                    <option value="">กำลังจัดส่ง</option>
+                    <option value="">จัดส่งสำเร็จ</option>
+                    <option value="">ยกเลิกคำสั่งซื้อ</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>27/03/2026</td>
+                <td>AAA20260024</td>
+                <td>คุณกนกวรรณ บุญมี</td>
+                <td>2,400</td>
+                <td>
+                  <select id="status" class="button button-outline button-warning" name="status">
+                    <option value="">รอชำระเงิน</option>
+                    <option value="">ชำระเงินแล้ว</option>
+                    <option value="" selected>กำลังเตรียมสินค้า</option>
+                    <option value="">กำลังจัดส่ง</option>
+                    <option value="">จัดส่งสำเร็จ</option>
+                    <option value="">ยกเลิกคำสั่งซื้อ</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>27/03/2026</td>
+                <td>AAA20260023</td>
+                <td>บริษัท พรีเมียร์ เอ็นเนอร์ยี่ จำกัด</td>
+                <td>170,000</td>
+                <td>
+                  <select id="status" class="button button-outline button-success" name="status">
+                    <option value="">รอชำระเงิน</option>
+                    <option value="" selected>ชำระเงินแล้ว</option>
+                    <option value="">กำลังเตรียมสินค้า</option>
+                    <option value="">กำลังจัดส่ง</option>
+                    <option value="">จัดส่งสำเร็จ</option>
+                    <option value="">ยกเลิกคำสั่งซื้อ</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a class="button button-soft button-content" href="./dashboard-order.html">คำสั่งซื้อทั้งหมด</a>
       </section>
-      <section id="maintenance" class="flex flex-col gap-5">
-        <header class="flex justify-between items-center">
-          <h2>ตารางนัดหมายวันนี้</h2>
-          <a class="button button-soft button-content" href="./dashboard-maintenance.html">นัดหมายทั้งหมด</a>
-        </header>
-        <table>
-          <thead>
-            <tr>
-              <th>วันที่นัดหมาย</th>
-              <th>เลขที่คำสั่งซื้อ</th>
-              <th>ชื่อลูกค้า</th>
-              <th>เบอร์ติดต่อ</th>
-              <th>ประเภทงาน</th>
-              <th>ทีมช่าง</th>
-              <th>สถานะ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>04/04/2026</td>
-              <td>MA20260030</td>
-              <td>บริษัท เอ็นเนอร์จีวัน จำกัด</td>
-              <td>02-888-2233</td>
-              <td>ซ่อมบำรุง</td>
-              <td>ทีม 2</td>
-              <td>
-                <select>
-                  <option>กำลังดำเนินการ</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>04/04/2026</td>
-              <td>CL20260031</td>
-              <td>คุณศุภกฤต วงศ์สวัสดิ์</td>
-              <td>091-234-7788</td>
-              <td>ล้างแผง</td>
-              <td>ทีม 3</td>
-              <td>
-                <select>
-                  <option>เลื่อนนัด</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>04/04/2026</td>
-              <td>IN20260032</td>
-              <td>บริษัท กรีนไลฟ์ โซลูชั่น จำกัด</td>
-              <td>02-456-7890</td>
-              <td>ติดตั้ง</td>
-              <td>ทีม 1</td>
-              <td>
-                <select>
-                  <option>กำลังดำเนินการ</option>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <section id="maintenance" class="flex flex-row flex-wrap justify-between items-center gap-5">
+        <h2>ตารางนัดหมายวันนี้</h2>
+        <div class="table-container xs:order-3">
+          <table>
+            <colgroup>
+              <col class="w-px">
+              <col class="w-px">
+              <col class="w-auto">
+              <col class="w-px">
+              <col class="w-px">
+              <col class="w-px">
+              <col class="w-px">
+            </colgroup> 
+            <thead>
+              <tr>
+                <th scope="col">วันที่นัดหมาย</th>
+                <th scope="col">เลขที่คำสั่งซื้อ</th>
+                <th scope="col">ชื่อลูกค้า</th>
+                <th scope="col">เบอร์ติดต่อ</th>
+                <th scope="col">ประเภทงาน</th>
+                <th scope="col">ทีมช่าง</th>
+                <th scope="col">สถานะ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>04/04/2026</td>
+                <td>MA20260030</td>
+                <td>บริษัท เอ็นเนอร์จีวัน จำกัด</td>
+                <td>02-888-2233</td>
+                <td>ซ่อมบำรุง</td>
+                <td>ทีม 2</td>
+                <td>
+                  <select id="status" class="button button-outline button-primary" name="status">
+                    <option value="">รับคำขอ</option>
+                    <option value="">นัดหมายแล้ว</option>
+                    <option value="" selected>กำลังดำเนินการ</option>
+                    <option value="">ปิดงานแล้ว</option>
+                    <option value="">เลื่อนนัด</option>
+                    <option value="">ยกเลิกงาน</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>04/04/2026</td>
+                <td>CL20260031</td>
+                <td>คุณศุภกฤต วงศ์สวัสดิ์</td>
+                <td>091-234-7788</td>
+                <td>ล้างแผง</td>
+                <td>ทีม 3</td>
+                <td>
+                  <select id="status" class="button button-outline button-warning" name="status">
+                    <option value="">รับคำขอ</option>
+                    <option value="">นัดหมายแล้ว</option>
+                    <option value="">กำลังดำเนินการ</option>
+                    <option value="">ปิดงานแล้ว</option>
+                    <option value="" selected>เลื่อนนัด</option>
+                    <option value="">ยกเลิกงาน</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>04/04/2026</td>
+                <td>IN20260032</td>
+                <td>บริษัท กรีนไลฟ์ โซลูชั่น จำกัด</td>
+                <td>02-456-7890</td>
+                <td>ติดตั้ง</td>
+                <td>ทีม 1</td>
+                <td>
+                  <select id="status" class="button button-outline button-primary" name="status">
+                    <option value="">รับคำขอ</option>
+                    <option value="">นัดหมายแล้ว</option>
+                    <option value="" selected>กำลังดำเนินการ</option>
+                    <option value="">ปิดงานแล้ว</option>
+                    <option value="">เลื่อนนัด</option>
+                    <option value="">ยกเลิกงาน</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a class="button button-soft button-content" href="./dashboard-maintenance.html">นัดหมายทั้งหมด</a>
       </section>
     </main>
   </body>

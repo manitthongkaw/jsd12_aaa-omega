@@ -3081,6 +3081,13 @@
   .button-group > .button:is(.button-outline):not(:first-child) {
     margin-left: -1px;
   }
+  .pagination {
+    margin-top: calc(var(--spacing) * 5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+  }
   #stat {
     display: flex;
     gap: calc(var(--spacing) * 5);

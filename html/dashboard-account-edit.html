@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account Dashboard - AAA Omega Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <script type="text/javascript" src="./src/assets/js/script.js" defer></script>
+  </head>
+  <body class="dashboard flex">
+    <header class="fixed z-98 flex md:hidden items-center w-full rounded-b-2xl bg-white shadow-2xl/10">
+      <a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-5 py-4" href="./dashboard.html">LOGO</a>
+      <a class="nav-toggle button button-icon button-ghost button-content hover:text-primary-hover hover:bg-neutral-lighter" href="#navToggle"><span class="icon-material">menu</span></a>
+    </header>
+    <aside id="asideContainer" class="fixed z-99 -translate-x-full md:translate-x-0 transition-all duration-300">
+      <nav id="navContainer" class="flex flex-col w-50 h-dvh overflow-auto rounded-r-2xl bg-neutral-lighter">
+        <ul id="navHeader" class="flex justify-between items-center gap-2 p-2">
+          <li><a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-3 py-2" href="./dashboard.html">LOGO</a></li>
+          <li class="md:hidden"><a class="nav-toggle button button-icon button-ghost button-content" href="#navToggle"><span class="icon-material">close</span></a></li>
+        </ul>
+        <ul id="navMain" class="flex flex-col flex-1 gap-2 p-2 border-t">
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-product.html"><span class="icon-material">storefront</span> สินค้า</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-order.html"><span class="icon-material">shopping_cart</span> คำสั่งซื้อ</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-service.html"><span class="icon-material">build</span> บริการซ่อมบำรุง</a></li>
+          <li><a class="button button-ghost justify-start w-full hover:text-primary-dark bg-white" href="./dashboard-account.html"><span class="icon-material icon-fill">person_outline</span> รายชื่อบัญชี</a></li>
+        </ul>
+        <ul id="navFooter" class="flex flex-col gap-2 p-2 border-t">
+          <li><a class="group button button-ghost button-content justify-start items-start w-full hover:text-white py-2 border hover:border-primary-base bg-white hover:bg-primary-base" href="./dashboard-admin.html"><span class="icon-material">account_circle</span>
+            <div class="flex flex-col">
+              <span class="leading-6">AAA Admin</span>
+              <span class="text-xs text-content-soft group-hover:text-content-light transition-all">ผู้ดูแลระบบ</span>
+            </div></a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-error-hover" href="./dashboard-login.html"><span class="icon-material">logout</span> ออกจากระบบ</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="flex grow flex-col min-w-0 w-2/3 gap-10 px-5 pt-25 pb-10 md:px-10 md:py-15 md:ml-50">
+      <section id="accountEdit" class="flex flex-row flex-wrap justify-between items-center gap-5">
+        <h1>รายละเอียดบัญชี</h1>
+        <form>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="firstName">ชื่อจริง</label>
+              <input type="text" id="firstName" name="firstName" value="คุณธีรภัทร" placeholder="สมชาย" maxlength="120" required>
+            </div>
+            <div class="input-group">
+              <label for="lastName">นามสกุล</label>
+              <input type="text" id="lastName" name="lastName" value="เจริญวงศ์" placeholder="ใจดี" maxlength="120" required>
+            </div>
+          </div>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="email">อีเมล</label>
+              <input type="email" id="email" name="email" value="" placeholder="account@email.com" maxlength="120" required>
+            </div>
+            <div class="input-group">
+              <label for="phone">เบอร์ติดต่อ</label>
+              <input type="tel" id="phone" name="phone" value="089-555-1122" placeholder="081-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" min="10" max="20">
+            </div>
+            <div class="input-group">
+              <label for="phone2">เบอร์ติดต่อ
+                <span class="text-xs text-content-soft">(สำรอง)</span></label>
+              <input type="tel" id="phone2" name="phone2" value="" placeholder="099-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" min="10" max="20">
+            </div>
+          </div>
+          <hr>
+          <fieldset>
+            <legend>ที่อยู่ของคุณ และสำหรับรับบิล</legend>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="address">ที่อยู่</label>
+                <input type="text" id="address" name="address" value="89 ซอยเพชรเกษม" placeholder="ระบุเลขที่บ้าน / หมู่บ้าน">
+              </div>
+              <div class="input-group">
+                <label for="subdistrict">แขวง / ตำบล</label>
+                <input type="text" id="subdistrict" name="subdistrict" value="แขวงหนองค้างพลู" placeholder="ระบุแขวง / ตำบล">
+              </div>
+              <div class="input-group">
+                <label for="district">เขต / อำเภอ</label>
+                <input type="text" id="district" name="district" value="เขตหนองแขม" placeholder="ระบุเขต / อำเภอ">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="province">จังหวัด</label>
+                <input type="text" id="province" name="province" value="กรุงเทพ" placeholder="ระบุจังหวัด">
+              </div>
+              <div class="input-group">
+                <label for="postcode">รหัสไปรษณีย์</label>
+                <input type="text" id="postcode" name="postcode" value="10110" placeholder="ระบุรหัสไปรษณีย์" pattern="[0-9]{5}" maxlength="5">
+              </div>
+              <div class="input-group max-sm:hidden"></div>
+            </div>
+          </fieldset>
+          <hr>
+          <fieldset>
+            <legend>ที่อยู่สำหรับจัดส่งสินค้า และบริการ</legend>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="shippingAddress">ที่อยู่</label>
+                <input type="text" id="shippingAddress" name="shippingAddress" value="" placeholder="ระบุเลขที่บ้าน / หมู่บ้าน">
+              </div>
+              <div class="input-group">
+                <label for="shippingSubdistrict">แขวง / ตำบล</label>
+                <input type="text" id="shippingSubdistrict" name="shippingSubdistrict" value="" placeholder="ระบุแขวง / ตำบล">
+              </div>
+              <div class="input-group">
+                <label for="shippingDistrict">เขต / อำเภอ</label>
+                <input type="text" id="shippingDistrict" name="shippingDistrict" value="" placeholder="ระบุเขต / อำเภอ">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="shippingProvince">จังหวัด</label>
+                <input type="text" id="shippingProvince" name="shippingProvince" value="" placeholder="ระบุจังหวัด">
+              </div>
+              <div class="input-group">
+                <label for="shippingPostcode">รหัสไปรษณีย์</label>
+                <input type="text" id="shippingPostcode" name="shippingPostcode" value="" placeholder="ระบุรหัสไปรษณีย์" pattern="[0-9]{5}" maxlength="5">
+              </div>
+              <div class="input-group max-sm:hidden"></div>
+            </div>
+          </fieldset>
+            <div class="button-row">
+              <button type="reset" class="button button-soft button-content" onclick="event.preventDefault(); window.location.href='./dashboard-account-item.html';">ยกเลิก</button>
+              <button class="button" onclick="event.preventDefault(); window.location.href='./dashboard-account-item.html';">บันทึก</button>
+            </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

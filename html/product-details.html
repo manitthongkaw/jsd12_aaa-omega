@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Kanit', 'sans-serif'],
+          },
+          colors: {
+            primary: '#7f8dd1',
+          }
+        }
+      }
+    }
+    </script>
+
+    <!-- Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+
+    <style>
+        .option-btn { 
+            border: 1px solid #ccc; 
+            background: white; 
+            padding: 8px 16px; 
+            cursor: pointer; 
+            border-radius: 2px; 
+            font-family: inherit;
+        }
+        
+        /* when button was chosen */
+        .option-btn:hover, .option-btn.active { 
+            border-color: #6573b5; 
+            color: #6573b5;
+        }
+          
+    </style>
+</head>
+
+<body class="font-sans bg-slate-50 text-[#1e2939] text-sm min-h-screen">
+    
+  <!-- Header -->    
+  <header class="bg-primary px-5 h-14 flex items-center gap-4 sticky top-0 z-[100]">
+    <span class="text-[22px] font-bold text-white tracking-wide">SolarShop</span>
+    <span class="w-px h-6 bg-white/40"></span>
+    <span class="text-white/90 text-base">รายละเอียดสินค้า</span>
+  </header>
+  
+  <!-- Product Container -->
+  <div class="max-w-[1200px] mx-auto px-4 py-5">
+
+    <!-- Product Main -->
+    <div class="flex gap-10">
+
+        <!-- Product Gallery -->
+        <div class="w-3/5 border border-gray-100 rounded-sm object-cover">
+            <img src="./src/assets/images/product-001.png" alt="product-001" class="product-001"></div>
+            
+        <!-- Product Info -->
+        <div class="flex-1">
+            <!-- Product Title -->
+            <div class="text-2xl font-medium text-gray-800 mt-0 mb-4">อินเวอร์เตอร์ Smart Energy Controller</div>
+            <!-- Product Price -->
+            <div class="text-primary-base text-3xl font-medium bg-gray-50 py-4 mb-6">฿20,000 - 60,000</div>           
+            <!-- Options Label -->
+            <div class="w-32 text-content-soft text-sm">ขนาดกำลังผลิต</div>
+                <!-- Options List -->
+                <div class="flex gap-4 mt-4"></div>
+                    <button class="option-btn active">3kW</button>
+                    <button class="option-btn">5kW</button>
+                    <button class="option-btn">10kW</button>
+                </div>
+            </div>
+            <!-- Quantity -->
+            <div class="w-32 text-content-soft text-sm">จำนวน</div>
+                    <input type="number" value="1" class="w-16 p-2 border border-gray-300 rounded-sm text-center focus:border-blue-600 outline-none transition-all">
+            <!-- Action Buttons -->
+            <div class="flex gap-4 mt-9">
+                <a class="button button-outline button-primary" title="button button-outline button-primary" href="#button">เพิ่มไปยังรถเข็น</a>
+                <a class="button button-primary" title="button button-primary" href="#button">ซื้อสินค้า</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Description -->
+    <div class="mt-12">
+        <h3 class="bg-gray-50 text-primary-base p-4 text-lg mb-5 font-medium">รายละเอียดสินค้า</h3>
+        <!-- Product Details -->
+        <div class="text-neutral-dark leading-loose px-4">
+            <p><b>ชื่อสินค้า:</b> Smart Energy Controller - Inverter รุ่น SEC-5000 Hybrid</p>
+            <ul>
+                <li><b>สถานะสินค้า:</b> มีสินค้าพร้อมส่ง</li>
+                <li><b>ขนาดกำลังไฟ:</b> 3kW, 5kW, 10kW</li>
+                <li><b>ระบบการเชื่อมต่อ:</b> Wi-Fi + Mobile App, 4G Dongle</li>
+                <li><b>คำบรรายสินค้า:</b> Smart Energy Controller รุ่น SEC-5000 เป็นอินเวอร์เตอร์ระบบไฮบริดที่ฉลาดที่สุดในปัจจุบัน ออกแบบมาเพื่อควบคุมการไหลเวียนของกระแสไฟฟ้าจากแผงโซล่าเซลล์ แบตเตอรี่ และระบบสายส่งไฟฟ้าอย่างมีประสิทธิภาพสูงสุด ช่วยลดค่าไฟได้มากกว่า 60% พร้อมระบบ AI ที่ช่วยวิเคราะห์และพยากรณ์การใช้พลังงานล่วงหน้า</li>
+                <li><b>จุดเด่น:</b> ประสิทธิภาพการแปลงพลังงานสูงถึง 98.4%<br>
+                    ดูการผลิตไฟฟ้าและสถานะเครื่องได้แบบ Real-time ผ่านแอปพลิเคชัน<br>
+                    มาตรฐานกันน้ำกันฝุ่น IP65 ติดตั้งภายนอกอาคารได้<br>
+                    มีระบบป้องกันไฟกระชากและระบบ Arc Fault Circuit Interrupter (AFCI) ในตัว</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
